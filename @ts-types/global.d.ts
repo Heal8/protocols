@@ -10,6 +10,11 @@ declare const heal: {
 			setRecurrence(notification: any, startDate: Date, period: string, value: number, skipEvery?: number): void,
 			showPage(offset: number): void,
 			componentReady(props: any),
+			scrollTo(x: number, y: number): void,
+			resetScroller(): void,
+			getResUrl(protocol: any, resPath: string): string,
+			openFindDoctor(serverFilter: any, uiFilter: any),
+			navigateToBookAppointment(): void,
 			consts: {
 				MONTH_PERIOD: string,
 				DAY_PERIOD: string,
