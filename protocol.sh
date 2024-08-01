@@ -23,7 +23,7 @@ elif [ "$mode" = "notify" ]; then
 elif [ "$mode" = "build" ]; then
 	if [ -f "./development/$protocol/info.json" ]; then
 		aws s3 sync --exact-timestamps --profile $protocol --delete --exclude ".git/*" --exclude "node_modules/*" --exclude "package-lock.json" ./development/$protocol s3://protocol-$protocol
-		curl -w "\n" -H $auth -X POST $url/api/v1/buildProtocol/$protocol
+		curl -w "\n" -H "$auth" -X POST $url/api/v1/buildProtocol/$protocol
 	else
 		echo "Protocol doesn't exist. Please, call fetch to retrieve the initial version of the protocol."
 	fi
